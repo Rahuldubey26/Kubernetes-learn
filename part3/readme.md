@@ -33,7 +33,7 @@ spec:
 
 ```
 ## ConfigMap Exampl
-
+```
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -42,10 +42,10 @@ data:
   mymessage: >
     Hello, this is a folded
     multi-line message.
-
+```
 
 ## Job
-
+```
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -59,10 +59,10 @@ spec:
         command: ["sleep", "5"]  
       restartPolicy: OnFailure  
   backoffLimit: 4 
-
+```
 ## Pod with Init Container
 ## A Pod with an init container that downloads a webpage before starting the main nginx container.
-
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -84,10 +84,10 @@ spec:
     volumeMounts:
     - name: shared-data
       mountPath: /usr/share/nginx/html
-
+```
 ## Pod with Multiple Init Containers
 ## A Pod with multiple init containers ensuring that services are available before starting the main container.
-
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -104,10 +104,10 @@ spec:
   - name: main-container
     image: busybox
     command: ['sleep', '3600']
-
+```
 ## Services
 ## Services to expose db and myservice with specific ports.
-
+```
 ---
 apiVersion: v1
 kind: Service
@@ -132,10 +132,11 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
-    
+```
+
 ## Multi-Container Pod
 ## A multi-container Pod sharing a volume between containers.
-
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -159,3 +160,4 @@ spec:
     - name: shared-data
       mountPath: /usr/share/nginx/html
       
+```
