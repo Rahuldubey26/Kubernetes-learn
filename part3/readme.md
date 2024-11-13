@@ -31,8 +31,8 @@ spec:
 ## Remember only once we can create but can apply many times.
 ![alt text]({CDD68524-9337-4D6F-8927-A39A62134652}.png)
 
-
-## ConfigMap Example
+```
+## ConfigMap Exampl
 
 apiVersion: v1
 kind: ConfigMap
@@ -43,7 +43,8 @@ data:
     Hello, this is a folded
     multi-line message.
 
-##Job
+
+## Job
 
 apiVersion: batch/v1
 kind: Job
@@ -59,8 +60,8 @@ spec:
       restartPolicy: OnFailure  
   backoffLimit: 4 
 
-##Pod with Init Container
-##A Pod with an init container that downloads a webpage before starting the main nginx container.
+## Pod with Init Container
+## A Pod with an init container that downloads a webpage before starting the main nginx container.
 
 apiVersion: v1
 kind: Pod
@@ -83,8 +84,9 @@ spec:
     volumeMounts:
     - name: shared-data
       mountPath: /usr/share/nginx/html
-##Pod with Multiple Init Containers
-##A Pod with multiple init containers ensuring that services are available before starting the main container.
+
+## Pod with Multiple Init Containers
+## A Pod with multiple init containers ensuring that services are available before starting the main container.
 
 apiVersion: v1
 kind: Pod
@@ -102,8 +104,9 @@ spec:
   - name: main-container
     image: busybox
     command: ['sleep', '3600']
-##Services
-##Services to expose db and myservice with specific ports.
+
+## Services
+## Services to expose db and myservice with specific ports.
 
 ---
 apiVersion: v1
@@ -129,8 +132,9 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
-##Multi-Container Pod
-##A multi-container Pod sharing a volume between containers.
+    
+## Multi-Container Pod
+## A multi-container Pod sharing a volume between containers.
 
 apiVersion: v1
 kind: Pod
