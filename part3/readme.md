@@ -33,7 +33,7 @@ spec:
 
 ```
 ## ConfigMap Exampl
-```
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -45,7 +45,7 @@ data:
 ```
 
 ## Job
-```
+```yaml
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -62,7 +62,7 @@ spec:
 ```
 ## Pod with Init Container
 ## A Pod with an init container that downloads a webpage before starting the main nginx container.
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -87,7 +87,7 @@ spec:
 ```
 ## Pod with Multiple Init Containers
 ## A Pod with multiple init containers ensuring that services are available before starting the main container.
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -107,7 +107,7 @@ spec:
 ```
 ## Services
 ## Services to expose db and myservice with specific ports.
-```
+```yaml
 ---
 apiVersion: v1
 kind: Service
@@ -136,7 +136,7 @@ spec:
 
 ## Multi-Container Pod
 ## A multi-container Pod sharing a volume between containers.
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
