@@ -32,11 +32,8 @@ spec:
 ![alt text]({CDD68524-9337-4D6F-8927-A39A62134652}.png)
 
 
-ConfigMap Example
-A ConfigMap with folded multi-line data.
+## ConfigMap Example
 
-yaml
-Copy code
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -45,11 +42,9 @@ data:
   mymessage: >
     Hello, this is a folded
     multi-line message.
-Job
-A Job running an nginx container that sleeps for 5 seconds with a backoff limit of 4.
 
-yaml
-Copy code
+##Job
+
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -63,11 +58,10 @@ spec:
         command: ["sleep", "5"]  
       restartPolicy: OnFailure  
   backoffLimit: 4 
-Pod with Init Container
-A Pod with an init container that downloads a webpage before starting the main nginx container.
 
-yaml
-Copy code
+##Pod with Init Container
+##A Pod with an init container that downloads a webpage before starting the main nginx container.
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -89,11 +83,9 @@ spec:
     volumeMounts:
     - name: shared-data
       mountPath: /usr/share/nginx/html
-Pod with Multiple Init Containers
-A Pod with multiple init containers ensuring that services are available before starting the main container.
+##Pod with Multiple Init Containers
+##A Pod with multiple init containers ensuring that services are available before starting the main container.
 
-yaml
-Copy code
 apiVersion: v1
 kind: Pod
 metadata:
@@ -110,11 +102,9 @@ spec:
   - name: main-container
     image: busybox
     command: ['sleep', '3600']
-Services
-Services to expose db and myservice with specific ports.
+##Services
+##Services to expose db and myservice with specific ports.
 
-yaml
-Copy code
 ---
 apiVersion: v1
 kind: Service
@@ -139,11 +129,9 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
-Multi-Container Pod
-A multi-container Pod sharing a volume between containers.
+##Multi-Container Pod
+##A multi-container Pod sharing a volume between containers.
 
-yaml
-Copy code
 apiVersion: v1
 kind: Pod
 metadata:
@@ -166,3 +154,4 @@ spec:
     volumeMounts:
     - name: shared-data
       mountPath: /usr/share/nginx/html
+      
