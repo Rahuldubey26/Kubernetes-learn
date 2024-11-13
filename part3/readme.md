@@ -30,4 +30,4 @@ spec:
 ## To run -> kubectl create -f  first.yaml and kubectl apply name.yaml
 ## Remember only once we can create but can apply many times.
 
-![alt text]({3FFCF935-71A5-4229-8B0B-A51348BB43C7}.png)
+![alt text](./part3/3FFCF935-71A5-4229-8B0B-A51348BB43C7.png)
