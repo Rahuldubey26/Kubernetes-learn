@@ -1,0 +1,19 @@
+
+# to expose the pod to outside world we need services
+# azureuser@user:~/k8s$ sudo -E kubectl port-forward services/nginx-service -n nginx 80:80 --address=0.0.0.0
+# Forwarding from 0.0.0.0:80 -> 80
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-service
+  namespace: nginx
+spec:
+  # Selector which will be matched with the name of deployment thing
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
